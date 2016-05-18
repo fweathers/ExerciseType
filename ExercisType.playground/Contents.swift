@@ -16,9 +16,13 @@ struct EllipticalTrainer : ExerciseType {
     let minutes: Double
 }
 
+let ellipticalWorkout = EllipticalTrainer(caloriesBurned: 335, minutes: 30)
+
 struct Treadmill : ExerciseType {
     let name = "Treadmill"
     let caloriesBurned: Double
     let minutes: Double
     let distanceInMiles : Double
 }
+
+let runningWorkout = Treadmill(caloriesBurned: 350, minutes: 25, distanceInMiles: 4.2)
