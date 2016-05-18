@@ -27,9 +27,11 @@ struct Treadmill : ExerciseType {
 
 let runningWorkout = Treadmill(caloriesBurned: 350, minutes: 25, distanceInMiles: 4.2)
 
-func caloriesBurnedPerMinute<Exercise: ExerciseType>(exercise: Exercise) -> Double {
-    return exercise.caloriesBurned / exercise.minutes
+extension ExerciseType {
+    var caloriesBurnedPerMinute : Double {
+        return caloriesBurned / minutes
+    }
 }
 
-print(caloriesBurnedPerMinute(ellipticalWorkout))
-print(caloriesBurnedPerMinute(runningWorkout))
+print(ellipticalWorkout.caloriesBurnedPerMinute)
+print(runningWorkout.caloriesBurnedPerMinute)
