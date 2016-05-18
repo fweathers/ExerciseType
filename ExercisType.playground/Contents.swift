@@ -35,3 +35,13 @@ extension ExerciseType {
 
 print(ellipticalWorkout.caloriesBurnedPerMinute)
 print(runningWorkout.caloriesBurnedPerMinute)
+
+extension SequenceType where Generator.Element == ExerciseType {
+    func totalCaloriesBurned() -> Double {
+        var total : Double = 0
+        for exercise in self {
+            total += exercise.caloriesBurned
+        }
+        return total
+    }
+}
